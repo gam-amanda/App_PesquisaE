@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvPesquisaE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="PESQUISA ELEITORAL"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVUrna"
+        app:layout_constraintStart_toStartOf="@+id/imgVUrna"
+        app:layout_constraintTop_toBottomOf="@+id/imgVUrna"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="2026"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvPesquisaE"
+        app:layout_constraintStart_toStartOf="@+id/tvPesquisaE"
+        app:layout_constraintTop_toBottomOf="@+id/tvPesquisaE"
+        tools:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgVGov"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_exame_icon" />
+
+    <ImageView
+        android:id="@+id/imgVUrna"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgVGov"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/imgVGov"
+        app:layout_constraintTop_toBottomOf="@+id/imgVGov"
+        app:srcCompat="@drawable/logo_urna_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
