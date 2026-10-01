@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imgVGov"
+        android:id="@+id/imgVLogoExame"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="5dp"
@@ -25,9 +25,9 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgVGov"
-        app:layout_constraintStart_toStartOf="@+id/imgVGov"
-        app:layout_constraintTop_toBottomOf="@+id/imgVGov"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/imgVLogoExame"
         app:srcCompat="@drawable/logo_urna_icon" />
 
     <TextView
