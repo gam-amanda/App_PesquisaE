@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultadosActivity">
+
+    <TextView
+        android:id="@+id/tvTituloResultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Resultados da pesquisa"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/imgVLogoExame"
+        tools:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgVLogoExame"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVoltar"
+        app:srcCompat="@drawable/logo_exame_icon" />
+
+    <Button
+        android:id="@+id/btVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvQtdPessoas"
+        android:layout_width="60dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="10dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvTituloMenu"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="@+id/tvTituloMenu"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloMenu"
+        tools:textAlignment="center"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTituloMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Total eleitores"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloResultados"
+        tools:textStyle="bold" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,4 +7,96 @@
     android:layout_height="match_parent"
     tools:context=".AdminMenuActivity">
 
+    <Button
+        android:id="@+id/btSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Sair"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgvLogoExame"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSair"
+        app:srcCompat="@drawable/logo_exame_icon" />
+
+    <TextView
+        android:id="@+id/tvTituloQtdPessoas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Quantidade de pessoas entrevistadas: "
+        app:layout_constraintEnd_toEndOf="@+id/imgvLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgvLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloMenu" />
+
+    <Button
+        android:id="@+id/btEleitores"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Eleitores"
+        app:layout_constraintEnd_toEndOf="@+id/tvQtdPessoas"
+        app:layout_constraintStart_toStartOf="@+id/tvQtdPessoas"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdPessoas" />
+
+    <Button
+        android:id="@+id/btResultados"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Resultados"
+        app:layout_constraintEnd_toEndOf="@+id/btEleitores"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btEleitores"
+        app:layout_constraintTop_toBottomOf="@+id/btEleitores" />
+
+    <Button
+        android:id="@+id/btLimparDados"
+        android:layout_width="145dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Limpar dados"
+        app:layout_constraintEnd_toEndOf="@+id/btResultados"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btResultados"
+        app:layout_constraintTop_toBottomOf="@+id/btResultados" />
+
+    <TextView
+        android:id="@+id/tvQtdPessoas"
+        android:layout_width="60dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="25dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvTituloQtdPessoas"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/tvTituloQtdPessoas"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloQtdPessoas"
+        tools:textAlignment="center"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTituloMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Menu do administrador"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgvLogoExame"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imgvLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/imgvLogoExame"
+        tools:textStyle="bold" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
