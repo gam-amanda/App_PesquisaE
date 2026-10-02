@@ -7,4 +7,84 @@
     android:layout_height="match_parent"
     tools:context=".PesquisaEspontaneaActivity">
 
+    <TextView
+        android:id="@+id/tvPesquisaE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PESQUISA ELEITORAL"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/imgVLogoExame"
+        tools:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgVLogoExame"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVoltar"
+        app:srcCompat="@drawable/logo_exame_icon" />
+
+    <Button
+        android:id="@+id/btVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIntEsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="1. INTENÇÃO ESPONTÂNEA"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/tvPesquisaE"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPerguntaEsp"
+        android:layout_width="306dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="80dp"
+        android:text="De forma espontânea, qual o seu candidato para Presidente nas próximas eleições?"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntEsp"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="@+id/tvIntEsp"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntEsp" />
+
+    <EditText
+        android:id="@+id/etCandidato"
+        android:layout_width="309dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Insira o nome do candidato"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPerguntaEsp"
+        app:layout_constraintStart_toStartOf="@+id/tvPerguntaEsp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPerguntaEsp" />
+
+    <Button
+        android:id="@+id/btEnviar"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="@+id/etCandidato"
+        app:layout_constraintStart_toStartOf="@+id/etCandidato"
+        app:layout_constraintTop_toBottomOf="@+id/etCandidato" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,26 +8,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class PesquisaEspontaneaActivity : AppCompatActivity() {
-
-    private lateinit var btSair : Button
+class DadosEleitorActivity : AppCompatActivity() {
+    private lateinit var btVoltar : Button
     private lateinit var btEnviar : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_pesquisa_espontanea)
+        setContentView(R.layout.activity_dados_eleitor)
 
-        btSair = findViewById(R.id.btVoltar)
+        btVoltar = findViewById(R.id.btVoltar)
         btEnviar = findViewById(R.id.btEnviar)
 
-        btSair.setOnClickListener {
+        btVoltar.setOnClickListener {
             finish()
         }
+
         btEnviar.setOnClickListener {
-            var telaPesquisaEstimulada : Intent
-            telaPesquisaEstimulada = Intent(this, PesquisaEstimuladaActivity::class.java)
-            startActivity(telaPesquisaEstimulada)
+            var telaPesquisaEspontanea : Intent
+            telaPesquisaEspontanea = Intent(this, PesquisaEspontaneaActivity::class.java)
+            startActivity(telaPesquisaEspontanea)
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

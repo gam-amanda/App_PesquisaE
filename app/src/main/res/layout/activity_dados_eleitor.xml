@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DadosEleitorActivity">
+
+    <TextView
+        android:id="@+id/tvImpLocal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="DADOS DO ENTREVISTADO"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvPesquisaE"
+        app:layout_constraintStart_toStartOf="@+id/tvPesquisaE"
+        app:layout_constraintTop_toBottomOf="@+id/tvPesquisaE"
+        tools:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPesquisaE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PESQUISA ELEITORAL"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/imgVLogoExame"
+        tools:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgVLogoExame"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVoltar"
+        app:srcCompat="@drawable/logo_exame_icon" />
+
+    <Button
+        android:id="@+id/btVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNomeUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvImpLocal2" />
+
+    <EditText
+        android:id="@+id/etNomeUser"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/tvNomeUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeUser" />
+
+    <TextView
+        android:id="@+id/tvTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Telefone"
+        app:layout_constraintStart_toStartOf="@+id/tvNomeUser"
+        app:layout_constraintTop_toBottomOf="@+id/etNomeUser" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="344dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/etNomeUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefone" />
+
+    <Button
+        android:id="@+id/btEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame"
+        app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
