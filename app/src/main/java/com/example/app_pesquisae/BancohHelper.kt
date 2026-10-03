@@ -66,4 +66,18 @@ class BancoHelper(context: Context) :
         }
         writableDatabase.insert("entrevistas", null, valores)
     }
+
+    // Total de entrevistados (tela inicial do Admin)
+    fun contar(): Int {
+        val c = readableDatabase.rawQuery("SELECT COUNT(*) FROM entrevistas", null)
+        c.moveToFirst()
+        val total = c.getInt(0)
+        c.close()
+        return total
+    }
+
+    // RF08: apaga todas as entrevistas
+    fun limpar() {
+        writableDatabase.delete("entrevistas", null, null)
+    }
 }

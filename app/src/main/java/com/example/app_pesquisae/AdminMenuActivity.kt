@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -48,16 +50,35 @@ class AdminMenuActivity : AppCompatActivity() {
             startActivity(telaResultados)
         }
 
+        //RF08: limpar todos os dados (pede confirmação antes)
         btLimparDados.setOnClickListener {
-
+            AlertDialog.Builder(this)
+                .setTitle("Limpar dados")
+                .setMessage("Tem certeza que deseja apagar TODAS as entrevistas? Essa ação não pode ser desfeita.")
+                .setPositiveButton("Apagar") { _, _ ->
+                    BancoHelper(this).limpar()
+                    atualizarTotal()
+                    Toast.makeText(this, "Dados apagados!", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Cancelar", null)
+                .show()
         }
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    //toda vez que a tela aparece (inclusive ao voltar das outras), atualiza o total
+    override fun onResume() {
+        super.onResume()
+        atualizarTotal()
+    }
+
+    //busca o total no banco e escreve na tela
+    private fun atualizarTotal() {
+        tvQtdPessoas.text = BancoHelper(this).contar().toString()
     }
 }
