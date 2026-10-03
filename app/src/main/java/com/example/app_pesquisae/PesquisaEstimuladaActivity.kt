@@ -8,10 +8,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.TextView
+import android.widget.Toast
 
 class PesquisaEstimuladaActivity : AppCompatActivity() {
     private lateinit var btVoltar : Button
     private lateinit var btEnviar : Button
+
+    private lateinit var rotulos : List<TextView>
     private lateinit var checkboxes: List<CheckBox>
     //criamps uma var lista do tipo checkbox
 
@@ -32,6 +36,14 @@ class PesquisaEstimuladaActivity : AppCompatActivity() {
         val cbBranco = findViewById<CheckBox>(R.id.cbBranco)
         val cbNulo = findViewById<CheckBox>(R.id.cbNulo)
         val cbNaoSei = findViewById<CheckBox>(R.id.cbNaoSei)
+
+        //nomes de cada opção (mesma ordem da lista de checkboxes)
+        rotulos = listOf(
+            findViewById<TextView>(R.id.tvC1), findViewById<TextView>(R.id.tvC2),
+            findViewById<TextView>(R.id.tvC3), findViewById<TextView>(R.id.tvC4),
+            findViewById<TextView>(R.id.tvC5), findViewById<TextView>(R.id.tvBranco),
+            findViewById<TextView>(R.id.tvNulo), findViewById<TextView>(R.id.tvNaoSei)
+        )
 
         //Agrupamos todos numa lista para facilitar o controle
                 checkboxes = listOf(cbC1, cbC2, cbC3, cbC4, cbC5, cbBranco, cbNulo, cbNaoSei)
@@ -55,6 +67,18 @@ class PesquisaEstimuladaActivity : AppCompatActivity() {
         }
 
         btEnviar.setOnClickListener {
+            //RF02: descobre qual opção foi marcada e guarda o nome dela
+            var escolhida = ""
+            for (i in checkboxes.indices) {
+                if (checkboxes[i].isChecked) {
+                    escolhida = rotulos[i].text.toString()
+                }
+            }
+            if (escolhida.isEmpty()) {
+                Toast.makeText(this, "Escolha uma opção para continuar", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            Entrevista.estimulada = escolhida
             var telaPesquisaProblemas :  Intent
             telaPesquisaProblemas = Intent(this, PesquisaProblemasActivity::class.java)
             startActivity(telaPesquisaProblemas)
