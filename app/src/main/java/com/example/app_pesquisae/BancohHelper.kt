@@ -45,4 +45,25 @@ class BancoHelper(context: Context) :
         db.execSQL("DROP TABLE IF EXISTS entrevistas")
         onCreate(db)
     }
+    // RF02, RF03, RF04: grava UMA entrevista completa (uma linha)
+    fun salvar(cidade: String, dataHora: String, latitude: Double?, longitude: Double?) {
+        val valores = ContentValues()
+        valores.put("espontanea", Entrevista.espontanea)
+        valores.put("estimulada", Entrevista.estimulada)
+        valores.put("problema1", Entrevista.problemas[0])
+        valores.put("problema2", Entrevista.problemas[1])
+        valores.put("problema3", Entrevista.problemas[2])
+        valores.put("nome", Entrevista.nome)
+        valores.put("celular", Entrevista.celular)
+        valores.put("cidade", cidade)
+        valores.put("data_hora", dataHora)
+        if (latitude != null && longitude != null) {
+            valores.put("latitude", latitude)
+            valores.put("longitude", longitude)
+        } else {
+            valores.putNull("latitude")
+            valores.putNull("longitude")
+        }
+        writableDatabase.insert("entrevistas", null, valores)
+    }
 }
