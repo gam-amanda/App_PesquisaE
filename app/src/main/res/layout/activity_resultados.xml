@@ -67,4 +67,51 @@
         app:layout_constraintStart_toStartOf="@+id/imgVLogoExame"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloResultados"
         tools:textStyle="bold" />
+
+    <!-- Gráfico Pizza -->
+    <!-- Parte rolável: legenda e pizza -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQtdPessoas">
+
+        <LinearLayout
+            android:id="@+id/llConteudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quant. de votos para cada candidato:"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llLegenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tvSemDados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ainda não há entrevistas registradas."
+                android:visibility="gone" />
+
+            <com.example.app_pesquisae.PieChartView
+                android:id="@+id/pieVotos"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

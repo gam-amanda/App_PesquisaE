@@ -97,4 +97,24 @@ class BancoHelper(context: Context) :
         c.close()
         return lista
     }
+
+    //etapa para inserir o gráfico
+    // RF06: votos da pesquisa estimulada, do mais votado para o menos votado
+    fun contarVotos(): List<Pair<String, Int>> {
+        return contarPorTexto(
+            "SELECT estimulada, COUNT(*) AS total FROM entrevistas " +
+                    "GROUP BY estimulada ORDER BY total DESC"
+        )
+    }
+
+    // Auxiliar: roda uma consulta com 2 colunas (texto, contagem) e devolve a lista
+    private fun contarPorTexto(sql: String): List<Pair<String, Int>> {
+        val lista = mutableListOf<Pair<String, Int>>()
+        val c = readableDatabase.rawQuery(sql, null)
+        while (c.moveToNext()) {
+            lista.add(Pair(c.getString(0), c.getInt(1)))
+        }
+        c.close()
+        return lista
+    }
 }
