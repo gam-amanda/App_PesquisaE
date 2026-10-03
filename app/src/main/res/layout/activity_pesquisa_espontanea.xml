@@ -71,7 +71,7 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Insira o nome do candidato"
+        android:hint="Insira o nome do candidato"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/tvPerguntaEsp"
         app:layout_constraintStart_toStartOf="@+id/tvPerguntaEsp"
