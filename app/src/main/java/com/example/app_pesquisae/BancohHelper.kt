@@ -80,4 +80,21 @@ class BancoHelper(context: Context) :
     fun limpar() {
         writableDatabase.delete("entrevistas", null, null)
     }
+
+    //tela adm!
+    // RF07: lista de entrevistados, do mais recente para o mais antigo
+    fun listar(): List<Registro> {
+        val lista = mutableListOf<Registro>()
+        val c = readableDatabase.rawQuery(
+            "SELECT nome, celular, cidade, data_hora, latitude, longitude " +
+                    "FROM entrevistas ORDER BY id DESC", null
+        )
+        while (c.moveToNext()) {
+            val lat = if (c.isNull(4)) null else c.getDouble(4)
+            val lon = if (c.isNull(5)) null else c.getDouble(5)
+            lista.add(Registro(c.getString(0), c.getString(1), c.getString(2), c.getString(3), lat, lon))
+        }
+        c.close()
+        return lista
+    }
 }
