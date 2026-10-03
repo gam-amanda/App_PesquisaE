@@ -117,4 +117,15 @@ class BancoHelper(context: Context) :
         c.close()
         return lista
     }
+
+    // PLUS: problemas mais citados (junta as 3 colunas de problemas)
+    fun contarProblemas(): List<Pair<String, Int>> {
+        return contarPorTexto(
+            "SELECT problema, COUNT(*) AS total FROM (" +
+                    "SELECT problema1 AS problema FROM entrevistas " +
+                    "UNION ALL SELECT problema2 FROM entrevistas " +
+                    "UNION ALL SELECT problema3 FROM entrevistas) " +
+                    "GROUP BY problema ORDER BY total DESC LIMIT 5"
+        )
+    }
 }

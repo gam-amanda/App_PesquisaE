@@ -21,6 +21,7 @@ class ResultadosActivity : AppCompatActivity() {
     private lateinit var llLegenda : LinearLayout
     private lateinit var tvSemDados : TextView
     private lateinit var pieVotos : PieChartView
+    private lateinit var tvTopProblemas : TextView   // PLUS
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,7 @@ class ResultadosActivity : AppCompatActivity() {
         llLegenda = findViewById(R.id.llLegenda)
         tvSemDados = findViewById(R.id.tvSemDados)
         pieVotos = findViewById(R.id.pieVotos)
+        tvTopProblemas = findViewById(R.id.tvTopProblemas)   // PLUS
 
         btVoltar.setOnClickListener {
             finish()
@@ -46,7 +48,7 @@ class ResultadosActivity : AppCompatActivity() {
         }
     }
 
-    // RF06: busca os números no banco e mostra legenda e pizza
+    // RF06: busca os números no banco e mostra legenda, pizza e o plus
     private fun mostrarResultados() {
         var banco = BancoHelper(this)
         var total = banco.contar()
@@ -75,5 +77,18 @@ class ResultadosActivity : AppCompatActivity() {
             }
             pieVotos.definirDados(votos)
         }
+
+        // PLUS: ranking dos problemas mais citados
+        tvTopProblemas.text = montarRanking(banco.contarProblemas())
+    }
+
+    // PLUS: transforma a lista em texto: "1. Saúde Pública - 12"
+    private fun montarRanking(lista: List<Pair<String, Int>>): String {
+        if (lista.isEmpty()) return "Sem dados ainda."
+        var texto = ""
+        for (i in lista.indices) {
+            texto += (i + 1).toString() + ". " + lista[i].first + " - " + lista[i].second + "\n"
+        }
+        return texto.trim()
     }
 }
