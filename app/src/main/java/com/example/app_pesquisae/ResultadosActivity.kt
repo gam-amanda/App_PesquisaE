@@ -22,6 +22,7 @@ class ResultadosActivity : AppCompatActivity() {
     private lateinit var tvSemDados : TextView
     private lateinit var pieVotos : PieChartView
     private lateinit var tvTopProblemas : TextView   // PLUS
+    private lateinit var tvNomesEspontaneos : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,7 @@ class ResultadosActivity : AppCompatActivity() {
         tvSemDados = findViewById(R.id.tvSemDados)
         pieVotos = findViewById(R.id.pieVotos)
         tvTopProblemas = findViewById(R.id.tvTopProblemas)   // PLUS
+        tvNomesEspontaneos = findViewById(R.id.tvNomesEspontaneos)
 
         btVoltar.setOnClickListener {
             finish()
@@ -80,6 +82,13 @@ class ResultadosActivity : AppCompatActivity() {
 
         // PLUS: ranking dos problemas mais citados
         tvTopProblemas.text = montarRanking(banco.contarProblemas())
+
+        var nomes = banco.listarEspontaneas()
+        if (nomes.isEmpty()) {
+            tvNomesEspontaneos.text = "Sem dados ainda."
+        } else {
+            tvNomesEspontaneos.text = nomes.joinToString("\n")
+        }
     }
 
     // PLUS: transforma a lista em texto: "1. Saúde Pública - 12"
@@ -91,4 +100,6 @@ class ResultadosActivity : AppCompatActivity() {
         }
         return texto.trim()
     }
+
+
 }

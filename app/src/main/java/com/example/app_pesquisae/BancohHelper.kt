@@ -118,6 +118,19 @@ class BancoHelper(context: Context) :
         return lista
     }
 
+    // Pegando os nomes da pesquisa espontânea
+    fun listarEspontaneas(): List<String> {
+        val nomes = mutableListOf<String>()
+        val c = readableDatabase.rawQuery("SELECT espontanea FROM entrevistas", null)
+        // lê linha por linha e copia cada nome para a lista
+        while (c.moveToNext()) {
+            nomes.add(c.getString(0))
+        }
+
+        c.close()
+        return nomes     // entrega a lista pronta
+    }
+
     // PLUS: problemas mais citados (junta as 3 colunas de problemas)
     fun contarProblemas(): List<Pair<String, Int>> {
         return contarPorTexto(
