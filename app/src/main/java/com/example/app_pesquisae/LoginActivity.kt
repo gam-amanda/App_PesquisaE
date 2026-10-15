@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        btSair = findViewById(R.id.btSair)
+        btSair = findViewById(R.id.btVoltar)
         btEntrar = findViewById(R.id.btEntrar)
 
         etUser = findViewById(R.id.etUser)

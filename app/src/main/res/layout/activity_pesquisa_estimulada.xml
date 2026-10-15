@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PesquisaEstimuladaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgVC3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/c3_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/cbC3"
+                app:layout_constraintStart_toEndOf="@+id/cbC3"
+                app:layout_constraintTop_toTopOf="@+id/cbC3" />
+
+            <TextView
+                android:id="@+id/tvIntEsp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="2. SELEÇÃO DE CANDIDATOS"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame2"
+                app:layout_constraintStart_toStartOf="@+id/imgVLogoExame2"
+                app:layout_constraintTop_toBottomOf="@+id/tvPesquisaE2"
+                tools:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPesquisaE2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PESQUISA ELEITORAL"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame2"
+                app:layout_constraintStart_toStartOf="@+id/imgVLogoExame2"
+                app:layout_constraintTop_toBottomOf="@+id/imgVLogoExame2"
+                tools:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btVoltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Voltar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgVLogoExame2"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btVoltar"
+                app:srcCompat="@drawable/logo_exame_icon" />
+
+            <CheckBox
+                android:id="@+id/cbC1"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintStart_toStartOf="@+id/btVoltar"
+                app:layout_constraintTop_toBottomOf="@+id/tvPerguntaSelecCand" />
+
+            <CheckBox
+                android:id="@+id/cbC2"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="@+id/cbC1"
+                app:layout_constraintTop_toBottomOf="@+id/cbC1" />
+
+            <CheckBox
+                android:id="@+id/cbC3"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="@+id/cbC2"
+                app:layout_constraintTop_toBottomOf="@+id/cbC2" />
+
+            <CheckBox
+                android:id="@+id/cbC4"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="@+id/cbC3"
+                app:layout_constraintTop_toBottomOf="@+id/cbC3" />
+
+            <CheckBox
+                android:id="@+id/cbC5"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="@+id/cbC4"
+                app:layout_constraintTop_toBottomOf="@+id/cbC4" />
+
+            <CheckBox
+                android:id="@+id/cbBranco"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/cbC5"
+                app:layout_constraintTop_toBottomOf="@+id/cbC5" />
+
+            <CheckBox
+                android:id="@+id/cbNulo"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/cbBranco"
+                app:layout_constraintTop_toBottomOf="@+id/cbBranco" />
+
+            <CheckBox
+                android:id="@+id/cbNaoSei"
+                android:layout_width="54dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="@+id/cbNulo"
+                app:layout_constraintTop_toBottomOf="@+id/cbNulo" />
+
+            <TextView
+                android:id="@+id/tvC1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Candidato 1"
+                app:layout_constraintStart_toEndOf="@+id/imgVC1"
+                app:layout_constraintTop_toTopOf="@+id/cbC1" />
+
+            <ImageView
+                android:id="@+id/imgVC1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbC1"
+                app:layout_constraintStart_toEndOf="@+id/cbC1"
+                app:layout_constraintTop_toTopOf="@+id/cbC1"
+                app:srcCompat="@drawable/c1_icon" />
+
+            <ImageView
+                android:id="@+id/imgVC2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbC2"
+                app:layout_constraintStart_toEndOf="@+id/cbC2"
+                app:layout_constraintTop_toTopOf="@+id/cbC2"
+                app:srcCompat="@drawable/c2_icon" />
+
+            <ImageView
+                android:id="@+id/imgVC4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbC4"
+                app:layout_constraintStart_toEndOf="@+id/cbC4"
+                app:layout_constraintTop_toTopOf="@+id/cbC4"
+                app:srcCompat="@drawable/c4_icon" />
+
+            <ImageView
+                android:id="@+id/imgVC5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbC5"
+                app:layout_constraintStart_toEndOf="@+id/cbC5"
+                app:layout_constraintTop_toTopOf="@+id/cbC5"
+                app:srcCompat="@drawable/c2_icon" />
+
+            <TextView
+                android:id="@+id/tvC2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Candidato 2"
+                app:layout_constraintStart_toEndOf="@+id/imgVC2"
+                app:layout_constraintTop_toTopOf="@+id/cbC2" />
+
+            <TextView
+                android:id="@+id/tvC3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Candidato 3"
+                app:layout_constraintStart_toEndOf="@+id/imgVC3"
+                app:layout_constraintTop_toTopOf="@+id/cbC3" />
+
+            <TextView
+                android:id="@+id/tvC4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Candidato 4"
+                app:layout_constraintStart_toEndOf="@+id/imgVC4"
+                app:layout_constraintTop_toTopOf="@+id/cbC4" />
+
+            <TextView
+                android:id="@+id/tvPartidoC1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Partido"
+                app:layout_constraintStart_toStartOf="@+id/tvC1"
+                app:layout_constraintTop_toBottomOf="@+id/tvC1" />
+
+            <TextView
+                android:id="@+id/tvPartidoC2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Partido"
+                app:layout_constraintStart_toStartOf="@+id/tvC2"
+                app:layout_constraintTop_toBottomOf="@+id/tvC2" />
+
+            <TextView
+                android:id="@+id/tvPartidoC3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Partido"
+                app:layout_constraintStart_toStartOf="@+id/tvC3"
+                app:layout_constraintTop_toBottomOf="@+id/tvC3" />
+
+            <TextView
+                android:id="@+id/tvPartidoC4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Partido"
+                app:layout_constraintStart_toStartOf="@+id/tvC4"
+                app:layout_constraintTop_toBottomOf="@+id/tvC4" />
+
+            <TextView
+                android:id="@+id/tvBranco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Branco"
+                app:layout_constraintBottom_toBottomOf="@+id/cbBranco"
+                app:layout_constraintStart_toEndOf="@+id/cbBranco"
+                app:layout_constraintTop_toTopOf="@+id/cbBranco" />
+
+            <TextView
+                android:id="@+id/tvNulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Nulo"
+                app:layout_constraintBottom_toBottomOf="@+id/cbNulo"
+                app:layout_constraintStart_toEndOf="@+id/cbNulo"
+                app:layout_constraintTop_toTopOf="@+id/cbNulo" />
+
+            <Button
+                android:id="@+id/btEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="50dp"
+                android:text="Enviar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame2"
+                app:layout_constraintStart_toStartOf="@+id/imgVLogoExame2"
+                app:layout_constraintTop_toBottomOf="@+id/cbNaoSei" />
+
+            <TextView
+                android:id="@+id/tvNaoSei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Não sei"
+                app:layout_constraintBottom_toBottomOf="@+id/cbNaoSei"
+                app:layout_constraintStart_toEndOf="@+id/cbNaoSei"
+                app:layout_constraintTop_toTopOf="@+id/cbNaoSei" />
+
+            <TextView
+                android:id="@+id/tvPerguntaSelecCand"
+                android:layout_width="354dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="80dp"
+                android:text="Dentre as opções abaixo, selecione a alternativa que representa seu voto para a presidência:"
+                app:layout_constraintEnd_toEndOf="@+id/imgVLogoExame2"
+                app:layout_constraintStart_toStartOf="@+id/imgVLogoExame2"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntEsp2" />
+
+            <TextView
+                android:id="@+id/tvC5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Candidato 5"
+                app:layout_constraintStart_toEndOf="@+id/imgVC5"
+                app:layout_constraintTop_toTopOf="@+id/imgVC5" />
+
+            <TextView
+                android:id="@+id/tvPartidoC5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="Partido"
+                app:layout_constraintStart_toStartOf="@+id/tvC5"
+                app:layout_constraintTop_toBottomOf="@+id/tvC5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
